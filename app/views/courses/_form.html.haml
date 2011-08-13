@@ -1,0 +1,22 @@
+= form_for(@course) do |f|
+  - if @course.errors.any?
+    #error_explanation
+      %h2 #{pluralize(@course.errors.count, "error")} prohibited this course from being saved:
+
+      %ul
+        - @course.errors.full_messages.each do |msg|
+          %li= msg
+  .field	  
+    =f.label 'Nome'
+    =f.text_field :name
+  .field
+    =f.label 'Prezzo'
+    =f.text_field :price
+  .field
+    =f.label 'Tipo'
+    =select("course", "course_type_id", CourseType.all.map {|c| [c.name.capitalize, c.id]}, {:include_blank => false})
+  .field
+    =f.label 'Immagine'
+    =f.file_field :image
+  .actions
+    = f.submit

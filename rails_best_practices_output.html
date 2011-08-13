@@ -1,0 +1,715 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>Output of rails_best_practices</title>
+    <style type='text/css'>
+      /*<![CDATA[*/
+        body {
+          color: #333;
+          background: #eee;
+          padding: 0 20px;
+        }
+        h1 {
+          color: ##4E4E4E;
+        }
+        table {
+          background: white;
+          border: 1px solid #666;
+          border-collapse: collapse;
+          margin: 20px 0;
+          font-size: 14px;
+        }
+        table th, table td {
+          padding: 4px;
+          border: 1px solid #D0D0D0;
+        }
+        table th {
+          background-color: #DFC;
+          color: #337022;
+        }
+        table td.filename {
+          color: #ED1556;
+        }
+        table tr:hover {
+          background-color: #FFFFC0;
+        }
+      /*]]>*/
+    </style>
+  </head>
+  <body>
+    <h1>rails_best_practices output</h1>
+    <h2>
+      Please go to
+      <a href='http://rails-bestpractices.com' target='_blank'>http://rails-bestpractices.com</a>
+      to see more useful Rails Best Practices.
+    </h2>
+    <h2>
+      Found 73 errors.
+    </h2>
+    <table>
+      <tr>
+        <th>Filename</th>
+        <th>Line Number</th>
+        <th>Error Message</th>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/show.html.haml
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/tables/index.html.haml
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/tables/index.html.haml
+        </td>
+        <td class='line-number'>6</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/tables/index.html.haml
+        </td>
+        <td class='line-number'>7</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/15-the-law-of-demeter' target='_blank'>law of demeter</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>15</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (course_orders => [order_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>15</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (course_orders => [course_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>26</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (courses => [course_type_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>35</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (orders => [table_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>35</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (orders => [user_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>47</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (tables => [user_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/schema.rb
+        </td>
+        <td class='line-number'>52</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/21-always-add-db-index' target='_blank'>always add db index (users => [role_id])</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>17</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/24-move-code-into-controller' target='_blank'>move code into controller</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/users/_form.html.haml
+        </td>
+        <td class='line-number'>38</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/24-move-code-into-controller' target='_blank'>move code into controller</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>7</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>8</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>15</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>17</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>19</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/users/_form.html.haml
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/users/_form.html.haml
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/users/_form.html.haml
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/users/_form.html.haml
+        </td>
+        <td class='line-number'>8</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/user_sessions/_form.html.haml
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/user_sessions/_form.html.haml
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/user_sessions/_form.html.haml
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/user_sessions/_form.html.haml
+        </td>
+        <td class='line-number'>8</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/27-replace-instance-variable-with-local-variable' target='_blank'>replace instance variable with local variable</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/admin_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/application_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/checkout_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/courses_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/home_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/kitchen_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/orders_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/tables_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/users_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/user_essions_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/user_sessions_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/user_session_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/waiters_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/helpers/waiter_helper.rb
+        </td>
+        <td class='line-number'>1</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/72-remove-empty-helpers' target='_blank'>remove empty helpers</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/models/course.rb
+        </td>
+        <td class='line-number'>7</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/models/order.rb
+        </td>
+        <td class='line-number'>6</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/models/table.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/models/user.rb
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/application_controller.rb
+        </td>
+        <td class='line-number'>3</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/courses_controller.rb
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/orders_controller.rb
+        </td>
+        <td class='line-number'>51</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/tables_controller.rb
+        </td>
+        <td class='line-number'>10</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/user_sessions_controller.rb
+        </td>
+        <td class='line-number'>2</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./config/routes.rb
+        </td>
+        <td class='line-number'>14</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/migrate/20110809000141_create_courses.rb
+        </td>
+        <td class='line-number'>8</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>9</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>10</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/60-remove-trailing-whitespace' target='_blank'>remove trailing whitespace</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/models/course.rb
+        </td>
+        <td class='line-number'>12</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/courses_controller.rb
+        </td>
+        <td class='line-number'>10</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/home_controller.rb
+        </td>
+        <td class='line-number'>5</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/kitchen_controller.rb
+        </td>
+        <td class='line-number'>3</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/orders_controller.rb
+        </td>
+        <td class='line-number'>29</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/users_controller.rb
+        </td>
+        <td class='line-number'>6</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/controllers/user_sessions_controller.rb
+        </td>
+        <td class='line-number'>21</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./config/routes.rb
+        </td>
+        <td class='line-number'>26</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/migrate/20110808234136_create_orders.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/migrate/20110809000141_create_courses.rb
+        </td>
+        <td class='line-number'>6</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/migrate/20110809002304_create_course_orders.rb
+        </td>
+        <td class='line-number'>7</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./db/migrate/20110809112819_create_tables.rb
+        </td>
+        <td class='line-number'>4</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/courses/_form.html.haml
+        </td>
+        <td class='line-number'>9</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+      <tr>
+        <td class='filename'>
+          ./app/views/orders/_form.html.haml
+        </td>
+        <td class='line-number'>10</td>
+        <td class='message'>
+          <a href='http://rails-bestpractices.com/posts/81-remove-tab' target='_blank'>remove tab, use spaces instead</a>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

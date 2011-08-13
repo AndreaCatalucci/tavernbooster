@@ -1,0 +1,32 @@
+// Place all the styles related to the tables controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#tables {
+  float: left;
+  
+  .table {
+    border-style: solid;
+    width: 150px;
+    height: 100px;
+    overflow: hidden;
+  }
+  
+  .free {
+    background-color: #FF0000;
+    button {      
+      visibility:hidden;
+    }
+  }
+    
+  .occupied {
+    background-color: #00FF00;
+    button {
+      visibility:visible;
+    }
+  }
+}
+
+#waiters {
+  float: right;
+}

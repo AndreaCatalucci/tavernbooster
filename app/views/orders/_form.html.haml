@@ -1,0 +1,25 @@
+= form_for(@order) do |f|
+  - if @order.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@order.errors.count, "error")
+        prohibited this order from being saved:
+      %ul
+        - @order.errors.full_messages.each do |msg|
+          %li= msg
+  .field	  
+    =f.label 'Nome Cliente'
+    =f.text_field :client_name
+  .field
+    =f.label 'Numero Tavolo'
+    =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
+  %table
+    - @course_types.each do |course_type|
+      %tbody
+        - @courses[course_type.id].each do |id, course|
+          %tr
+            %td=label_tag "courses[#{id}]", course[:name]
+            %td=number_field_tag "courses[#{id}]", course[:quantity]
+      
+  .actions
+    = f.submit

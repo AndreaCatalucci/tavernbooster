@@ -1,0 +1,20 @@
+%h1 Vista Personale
+
+%table
+  %tr
+    %th Username
+    %th/
+    %th/
+    %th/
+  - @roles.each do |role|
+    %tbody
+      %tr
+        %th{:colspan => 4}= role.name
+      -@users_by_role[role.id].each do |user|
+        %tr
+          %td= user.username
+          %td= link_to 'Show', user
+          %td= link_to 'Edit', edit_user_path(user)
+          %td= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+
+= link_to 'New User', new_user_path
