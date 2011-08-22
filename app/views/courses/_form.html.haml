@@ -12,15 +12,25 @@
       =f.text_field :name
   .clearfix
     =f.label 'Prezzo'
+<<<<<<< HEAD
     .input
       =f.text_field :price
+=======
+      .input
+        =f.text_field :price
+>>>>>>> ecbe98b5fd8ddf9bab60880a3c9eb404bfca3b0a
   .clearfix
     =f.label 'Tipo'
     .input
       =select("course", "course_type_id", CourseType.all.map {|c| [c.name.capitalize, c.id]}, {:include_blank => false})
   .clearfix
     =f.label 'Immagine'
+<<<<<<< HEAD
     .input
       =f.file_field :image
+=======
+      .input
+        =f.file_field :image
+>>>>>>> ecbe98b5fd8ddf9bab60880a3c9eb404bfca3b0a
   .actions
     = f.submit
