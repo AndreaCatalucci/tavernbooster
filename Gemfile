@@ -15,6 +15,8 @@ gem 'sqlite3'
 gem 'haml-rails'
 gem 'coffee-filter'
 
+gem 'twitter-bootstrap-rails'
+
 #DSL for forms and show
 gem 'simple_form'
 gem 'show_for'
