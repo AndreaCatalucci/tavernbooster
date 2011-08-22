@@ -9,12 +9,12 @@
           %li= msg
   .clearfix	  
     =f.label 'Nome Cliente'
-  .input
-    =f.text_field :client_name
+    .input
+      =f.text_field :client_name
   .clearfix
     =f.label 'Numero Tavolo'
-  .input
-    =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
+    .input
+      =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
   %table
     - @course_types.each do |course_type|
       %tbody
