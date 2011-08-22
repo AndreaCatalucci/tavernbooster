@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -34,10 +35,10 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
 
   create_table "orders", :force => true do |t|
     t.string   "client_name"
-    t.boolean  "paid"
+    t.boolean  "paid",        :default => false, :null => false
     t.integer  "people"
-    t.integer  "table_id",    :null => false
-    t.integer  "user_id",     :null => false
+    t.integer  "table_id",                       :null => false
+    t.integer  "user_id",                        :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -4,6 +4,12 @@ class Order < ActiveRecord::Base
   has_many :course_orders
   has_many :courses, :through => :course_orders
   
+  def total_price
+    course_orders.inject(0) do |acc, co|
+      acc += Course.find(co.course_id).price * co.number_required
+    end
+  end
+  
   def formatted_courses
     result = {}
     found_courses = CourseOrder.includes(:course).find_all_by_order_id(id)

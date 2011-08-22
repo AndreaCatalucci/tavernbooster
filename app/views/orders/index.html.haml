@@ -3,14 +3,34 @@
 
 %h1 Listing orders
 %table
-  %tr
+  %thead
+    %th Nome Cliente
+    %th Numero Tavolo
+    %th Numero Persone
+    %th Importo
+    %th Saldato
     %th
     %th
     %th
   - @orders.each do |order|
     %tr
+      %td= order.client_name
+      %td= order.table.number
+      %td= order.people
+      %td= format_price(order.total_price)
+      %td= check_box_tag("order_#{order.id}","",order.paid,:disabled => true)
       %td= link_to 'Show', order
       %td= link_to 'Edit', edit_order_path(order)
       %td= link_to 'Destroy', order, confirm: 'Are you sure?', method: :delete
+  %tfoot
+    %tr
+      %td
+      %td
+      %td
+      %td= format_price(@total)
+      %td
+      %td
+      %td
+      %td
 %br/
 = link_to 'New Order', new_order_path

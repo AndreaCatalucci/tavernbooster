@@ -3,6 +3,9 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.all
+    @total = @orders.inject(0) do |acc, ord|
+      acc += ord.total_price
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -49,7 +52,7 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @courses = @order.formatted_courses
     @course_types = CourseType.all
-    @allowed_tables = Table.find_by_user_id(current_user.id)
+    @allowed_tables = Table.find_all_by_user_id(current_user.id)
   end
 
   # POST /orders

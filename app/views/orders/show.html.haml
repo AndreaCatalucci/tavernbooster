@@ -4,6 +4,12 @@
   = o.association :table, :using => :number
   = o.association :people
   %table.common-table
+    %thead
+      %th Nome
+      %th Numero Ordinati
+      %th Numero Pronti
+      %th Prezzo Unitario
+      %th Prezzo
     %tbody
     - @courses.each do |c|
       %tr
@@ -20,6 +26,5 @@
         %td
         %td= format_price(@total_price)
   
-= link_to 'Edit', edit_order_path(@order)
-|
-\#{link_to 'Back', orders_path}
+= link_to 'Edit', edit_order_path(@order), :class => 'btn'
+= link_to 'Back', orders_path, :class => 'btn'
