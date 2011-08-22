@@ -1,4 +1,25 @@
 %p#notice= notice
+= show_for @order do |o|
+  = o.attribute :client_name
+  = o.association :table, :using => :number
+  = o.association :people
+  %table.common-table
+    %tbody
+    - @courses.each do |c|
+      %tr
+        %td= c[:name]
+        %td= c[:number_required]
+        %td= c[:number_cooked]
+        %td= format_price(c[:price])
+        %td= format_price(c[:subtotal])
+    %tfoot
+      %tr
+        %td
+        %td
+        %td
+        %td
+        %td= format_price(@total_price)
+  
 = link_to 'Edit', edit_order_path(@order)
 |
 \#{link_to 'Back', orders_path}

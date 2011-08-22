@@ -14,7 +14,17 @@ class OrdersController < ApplicationController
   # GET /orders/1.json
   def show
     @order = Order.find(params[:id])
-
+    @courses = @order.course_orders.inject([]) do |acc, co|
+      course = Course.find(co.course_id)
+      acc << {name: course.name, number_required: co.number_required, 
+        number_cooked: co.number_cooked, price: course.price, subtotal: course.price * co.number_required}
+    end
+    
+    @total_price = @order.course_orders.inject(0) do |acc, co|
+      course = Course.find(co.course_id)
+      acc += course.price * co.number_required
+    end
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @order }
@@ -28,7 +38,6 @@ class OrdersController < ApplicationController
     @course_types = CourseType.all
 	  @courses = @order.formatted_courses
     @allowed_tables = Table.find_all_by_user_id(current_user.id)
-    logger.debug @allowed_tables.pretty_inspect
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @order }

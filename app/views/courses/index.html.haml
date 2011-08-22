@@ -24,7 +24,7 @@
         %td
           = image_tag course.image_url if course.image?
         %td
-          %h1= ("%.2f" % course.price).gsub(".",",")
+          %h1= format_price(course.price)
         %td= link_to 'Show', course
         %td= link_to 'Edit', edit_course_path(course)
         %td= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete

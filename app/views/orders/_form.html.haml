@@ -1,27 +1,35 @@
 = form_for(@order) do |f|
-  - if @order.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@order.errors.count, "error")
-        prohibited this order from being saved:
-      %ul
-        - @order.errors.full_messages.each do |msg|
-          %li= msg
-  .clearfix	  
-    =f.label 'Nome Cliente'
-    .input
-      =f.text_field :client_name
-  .clearfix
-    =f.label 'Numero Tavolo'
-    .input
-      =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
-  %table
-    - @course_types.each do |course_type|
-      %tbody
-        - @courses[course_type.id].each do |id, course|
-          %tr
-            %td=label_tag "courses[#{id}]", course[:name]
-            %td=number_field_tag "courses[#{id}]", course[:quantity]
-      
+  .row
+    .span6{class: 'columns'}
+      - if @order.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@order.errors.count, "error")
+            prohibited this order from being saved:
+          %ul
+            - @order.errors.full_messages.each do |msg|
+              %li= msg
+      .clearfix	  
+        =f.label 'Nome Cliente'
+        .input
+          =f.text_field :client_name
+      .clearfix
+        =f.label 'Numero Tavolo'
+        .input
+          =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
+      .clearfix
+        =f.label 'Numero Persone'
+        .input
+          =f.text_field :people
+  .row
+    .span8{class: 'columns'}
+      %table.common-table
+        - @course_types.each do |course_type|
+          %tbody
+            - @courses[course_type.id].each do |id, course|
+              %tr
+                %td=label_tag "courses[#{id}]", course[:name]
+                %td=number_field_tag "courses[#{id}]", course[:quantity]
+        
   .actions
     = f.submit

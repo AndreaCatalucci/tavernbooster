@@ -15,8 +15,9 @@ gem 'sqlite3'
 gem 'haml-rails'
 gem 'coffee-filter'
 
-#
+#DSL for forms and show
 gem 'simple_form'
+gem 'show_for'
 
 #image uploads
 gem 'carrierwave'
@@ -43,6 +44,8 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 group :development do
+  gem 'pry'
+  gem 'pry-doc'
   # To use debugger
   gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'ffaker'
