@@ -1,3 +1,4 @@
-= render 'form'
+- content_for :sidebar do
+  = render :partial => 'shared/sidebar'
 
-= link_to 'Back', user_sessions_path
+= render 'form'

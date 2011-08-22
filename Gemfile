@@ -1,14 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc5'
+gem 'rails', '3.1.0.rc6'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 #database
 gem 'sqlite3'
-#arel 2.1.5 bug
-gem 'arel', '2.1.4'
+#arel >2.1.5 bug
+#gem 'arel', '2.1.4'
 
 #server push
 #gem 'faye'
@@ -16,6 +16,9 @@ gem 'arel', '2.1.4'
 #haml
 gem 'haml-rails'
 gem 'coffee-filter'
+
+#
+gem 'simple_form'
 
 #image uploads
 gem 'carrierwave'
@@ -41,10 +44,10 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
 group :development do
- gem 'ruby-debug19', :require => 'ruby-debug'
- gem 'ffaker'
+  # To use debugger
+  gem 'ruby-debug19', :require => 'ruby-debug'
+  gem 'ffaker'
 end
 
 group :test do

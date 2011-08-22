@@ -2,6 +2,8 @@ class HomeController < ApplicationController
   def index
     logger.debug current_user.try(:role).try(:name)
     case current_user.try(:role).try(:name)
+    when nil
+      redirect_to login_path
 	  when 'administrator'
 	    redirect_to :controller => 'admin', :action => 'index'
 	  when 'cashier'

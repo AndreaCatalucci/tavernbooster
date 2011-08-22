@@ -1,4 +1,7 @@
-<h1>Listing courses</h1>
+- content_for :sidebar do
+  = render :partial => 'shared/sidebar'
+
+%h1 Listing courses
 
 %table
   %thead
@@ -13,11 +16,11 @@
     %tbody
       %tr
         %th{:colspan => 7}
-          %h1= course_type.name.capitalize
+          %h2= course_type.name.capitalize
     - @courses_by_type[course_type].each do |course|
       %tr
         %td
-          %h2= course.name
+          %h3= course.name
         %td
           = image_tag course.image_url if course.image?
         %td
@@ -27,4 +30,4 @@
         %td= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete
 %br
 
-= link_to 'New Course', new_course_path
+  = link_to 'New Course', new_course_path, :class => 'btn'

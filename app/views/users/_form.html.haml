@@ -8,33 +8,33 @@
         - @user.errors.full_messages.each do |msg|
           %li= msg
 
-  .field
+  .clearfix
     = f.label :username
-    %br/
-    = f.text_field :username
-  .field
+    .input
+      = f.text_field :username
+  .clearfix
     = f.label :first_name
-    %br/
-    = f.text_field :first_name
-  .field
+    .input
+      = f.text_field :first_name
+  .clearfix
     = f.label :last_name
-    %br/
-    = f.text_field :last_name
-  .field
+    .input
+      = f.text_field :last_name
+  .clearfix
     = f.label :avatar
-    %br/
-    = f.file_field :avatar
-  .field
+    .input
+      = f.file_field :avatar
+  .clearfix
     = f.label :password
-    %br/
-    = f.password_field :password
-  .field
+    .input
+      = f.password_field :password
+  .clearfix
     = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  .field
+    .input
+      = f.password_field :password_confirmation
+  .clearfix
     = f.label :role
-    %br/
-    = select("user", "role_id", Role.all.map {|r| [r.name.capitalize, r.id]}, {:include_blank => false})
+    .input
+      = select("user", "role_id", Role.all.map {|r| [r.name.capitalize, r.id]}, {:include_blank => false})
   .actions
-    = f.submit
+    = f.submit "Create", :class => 'btn primary'

@@ -1,0 +1,12 @@
+- if current_user
+  %ul.sidebar
+    %li 
+      %a.btn{:href => admin_index_url} Amministrazione
+    %li
+      %a.btn{:href => tables_index_url} Tavoli
+    %li
+      %a.btn{:href => checkout_index_url} Cassa
+    %li
+      %a.btn{:href => kitchen_index_url} Cucina
+    %li
+      %a.btn{:href => waiter_index_url} Ordini  

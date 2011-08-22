@@ -7,12 +7,14 @@
       %ul
         - @order.errors.full_messages.each do |msg|
           %li= msg
-  .field	  
+  .clearfix	  
     =f.label 'Nome Cliente'
-    =f.text_field :client_name
-  .field
+	.input
+      =f.text_field :client_name
+  .clearfix
     =f.label 'Numero Tavolo'
-    =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
+	.input
+      =select("order", "table_id", @allowed_tables.try(:map) {|c| [c.number, c.id]}, {:include_blank => false})
   %table
     - @course_types.each do |course_type|
       %tbody

@@ -6,17 +6,21 @@
       %ul
         - @course.errors.full_messages.each do |msg|
           %li= msg
-  .field	  
+  .clearfix	  
     =f.label 'Nome'
-    =f.text_field :name
-  .field
+    .input  
+	  =f.text_field :name
+  .clearfix
     =f.label 'Prezzo'
-    =f.text_field :price
-  .field
+	.input
+      =f.text_field :price
+  .clearfix
     =f.label 'Tipo'
-    =select("course", "course_type_id", CourseType.all.map {|c| [c.name.capitalize, c.id]}, {:include_blank => false})
-  .field
+	.input
+      =select("course", "course_type_id", CourseType.all.map {|c| [c.name.capitalize, c.id]}, {:include_blank => false})
+  .clearfix
     =f.label 'Immagine'
-    =f.file_field :image
+	.input
+      =f.file_field :image
   .actions
     = f.submit

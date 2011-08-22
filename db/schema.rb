@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
 
   create_table "orders", :force => true do |t|
     t.string   "client_name"
+    t.boolean  "paid"
+    t.integer  "people"
     t.integer  "table_id",    :null => false
     t.integer  "user_id",     :null => false
     t.datetime "created_at"
@@ -46,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
 
   create_table "tables", :force => true do |t|
     t.integer "number",  :null => false
+    t.integer "seats"
     t.integer "user_id"
   end
 
