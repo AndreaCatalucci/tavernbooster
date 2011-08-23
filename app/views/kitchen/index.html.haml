@@ -2,12 +2,17 @@
   = render :partial => 'shared/sidebar'
 
 - @courses.each do |course|
-  .course
-    %h3=course.name
-    - course.pending_orders.each do |order|
-      .order
-        %p= course.course_orders.find_by_course_id(course.id).number_required
-        %p= course.course_orders.find_by_course_id(course.id).number_cooked
-        %p= order.table.number
-        %p= order.user.first_name
-        %p= order.created_at
+  .course{class: 'row'}
+    .span16{class: 'columns'}
+      %h3=course.name
+    - course.pending_orders.each_slice(4) do |orders|
+      .row
+        - orders.each do |order|
+          .order{class: 'span4 columns'}
+            - course_order = course.course_orders.find_by_course_id_and_order_id(course.id, order.id)
+            %p= course_order.number_required
+            %p= course_order.number_cooked
+            %p= course_order.number_needed
+            %p= order.table.number
+            %p= order.user.first_name
+            %p= order.created_at
