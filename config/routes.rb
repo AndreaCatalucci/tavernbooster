@@ -23,7 +23,7 @@ TavernBooster::Application.routes.draw do
   
   scope '/admin' do
     resources :courses
-	resources :users
+	  resources :users
   end
   
   scope '/waiter' do
@@ -35,7 +35,7 @@ TavernBooster::Application.routes.draw do
   end
   
   scope '/kitchen' do
-    resources :orders
+    put "orders/cook" => 'orders#cook'
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.

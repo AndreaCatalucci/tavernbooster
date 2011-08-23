@@ -1,6 +1,6 @@
 $ ->
-  $('button').button()
-  $('button').click ->
+  $('button.free_table').button()
+  $('button.free_table').click ->
     table_area = $(this).parent()
     old_waiter_id = table_area.attr('data-waiter-id')
     table_id = table_area.attr('data-id')

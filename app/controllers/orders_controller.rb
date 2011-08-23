@@ -102,4 +102,21 @@ class OrdersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def cook
+    course_id = params[:course_id]
+    order_id = params[:order_id]
+    course_order = CourseOrder.find_by_course_id_and_order_id(course_id,order_id)
+    new_val = course_order.number_cooked + 1
+    sql = "UPDATE 'course_orders' SET 'number_cooked' = #{new_val} WHERE 'course_orders'.'course_id' = 
+      #{course_id} AND 'course_orders'.'order_id' = #{order_id}"
+    ActiveRecord::Base.connection.execute(sql)
+    course_order = CourseOrder.find_by_course_id_and_order_id(course_id,order_id)
+    number_needed = course_order.number_needed
+    number_cooked = course_order.number_cooked
+    
+    respond_to do |format|
+      format.json { render json: {number_cooked: number_cooked, number_needed: number_needed} }
+    end
+  end
 end

@@ -10,9 +10,16 @@
         - orders.each do |order|
           .order{class: 'span4 columns'}
             - course_order = course.course_orders.find_by_course_id_and_order_id(course.id, order.id)
+            %p numero richiesti
             %p= course_order.number_required
-            %p= course_order.number_cooked
-            %p= course_order.number_needed
+            %p numero cucinati
+            %p.number_cooked= course_order.number_cooked
+            %p numero rimasti
+            %p.number_needed= course_order.number_needed
+            %p numero tavolo
             %p= order.table.number
+            %p nome cameriere
             %p= order.user.first_name
+            %p ora creazione
             %p= order.created_at
+            =button_tag "Servito", :class => 'btn serve', :data => {:course_id => course.id, :order_id => order.id}
