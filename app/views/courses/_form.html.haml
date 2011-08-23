@@ -9,18 +9,18 @@
   .clearfix	  
     =f.label 'Nome'
     .input  
-	  =f.text_field :name
+      =f.text_field :name
   .clearfix
     =f.label 'Prezzo'
-	.input
-      =f.text_field :price
+      .input
+        =f.text_field :price
   .clearfix
     =f.label 'Tipo'
-	.input
+    .input
       =select("course", "course_type_id", CourseType.all.map {|c| [c.name.capitalize, c.id]}, {:include_blank => false})
   .clearfix
     =f.label 'Immagine'
-	.input
-      =f.file_field :image
+      .input
+        =f.file_field :image
   .actions
     = f.submit
