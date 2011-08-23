@@ -2,7 +2,7 @@
   = render :partial => 'shared/sidebar'
 
 - @courses.each do |course|
-  .course{class: 'row'}
+  .course{class: 'row well'}
     .span16{class: 'columns'}
       %h3=course.name
     - course.pending_orders.each_slice(4) do |orders|
