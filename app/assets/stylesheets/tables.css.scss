@@ -7,9 +7,35 @@
   
   .table {
     border-style: solid;
-    width: 150px;
-    height: 100px;
     overflow: hidden;
+    margin-bottom: 20px;
+    height: 130px;
+    
+    h1 {
+      margin: 0 0 0 5px;
+    }
+    p {
+      margin: 0 5px 0 0;
+    }
+    .waiter_username {
+      font-size: 1.2em;
+      align: right;
+    }
+    
+    .waiter_first_name {
+      font-size: 0.9em;
+    }
+    
+    .waiter_last_name {
+      font-size: 0.9em;
+    }
+    
+    button {
+      float: none;
+      display: block;
+      width: 80%;
+      margin: 10px auto;
+    }
   }
   
   .free {
