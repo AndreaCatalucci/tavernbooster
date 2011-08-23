@@ -3,11 +3,12 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 $ ->
   $('button.serve').click ->
-    my_course_id  = $(this).attr('data-course-id')
-    my_order_id = $(this).attr('data-order-id')    
-    cooked_area = $(this).siblings('p#number_cooked')
-    remaining_area = $(this).siblings('p#number_needed')
-    number_area = $(this).siblings('#number')
+    button = $(this)
+    my_course_id  = button.attr('data-course-id')
+    my_order_id = button.attr('data-order-id')    
+    cooked_area = button.siblings('p#number_cooked')
+    remaining_area = button.siblings('p#number_needed')
+    number_area = button.siblings('#number')
     number = parseInt(number_area.val())
     old_val = parseInt(cooked_area.html())
     $.ajax 
@@ -18,11 +19,18 @@ $ ->
         order_id : my_order_id
         number: number
       success: (arg) ->
-        if number_needed == 0
-          alert('finito!')
+        if arg['number_needed'] <= 0
+          remove_course_order(my_course_id, my_order_id)
         else
           number_area.val(1)
           number_area.attr('max',arg['number_needed'])
-          console.log(arg)
           cooked_area.html(arg['number_cooked'])
           remaining_area.html(arg['number_needed'])
+          
+  remove_course_order = (course_id,order_id) ->
+    course_order_div = $('#course_' + course_id + '_order_' + order_id)
+    course_div = course_order_div.parent().parent()
+    if course_div.children('.course_order').length <= 1
+      course_div.remove()
+    else
+      course_order_div.remove()

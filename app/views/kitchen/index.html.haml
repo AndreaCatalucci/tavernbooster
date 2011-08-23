@@ -8,7 +8,7 @@
     - course.pending_orders.each_slice(4) do |orders|
       .row
         - orders.each do |order|
-          .order{class: 'span4 columns'}
+          %div{id: "course_#{course.id}_order_#{order.id}", class: 'course_order span4 columns'}
             - course_order = course.course_orders.find_by_course_id_and_order_id(course.id, order.id)
             %p numero richiesti
             %p= course_order.number_required
