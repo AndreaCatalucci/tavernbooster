@@ -5,7 +5,7 @@ class Course < ActiveRecord::Base
   belongs_to :course_type
   mount_uploader :image, ImageUploader
   
-  scope :needed, joins(:course_orders)
+  scope :needed, joins(:course_orders).merge(CourseOrder.pending)
   
   def self.all_by_type
     CourseType.all.inject({}) do |result, type|

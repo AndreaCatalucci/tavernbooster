@@ -1,4 +1,13 @@
 - content_for :sidebar do
   = render :partial => 'shared/sidebar'
 
-= debug @courses
+- @courses.each do |course|
+  .course
+    %h3=course.name
+    - course.pending_orders.each do |order|
+      .order
+        %p= course.course_orders.find_by_course_id(course.id).number_required
+        %p= course.course_orders.find_by_course_id(course.id).number_cooked
+        %p= order.table.number
+        %p= order.user.first_name
+        %p= order.created_at
