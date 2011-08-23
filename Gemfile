@@ -7,8 +7,6 @@ gem 'rails', '3.1.0.rc6'
 
 #database
 gem 'sqlite3'
-#arel >2.1.5 bug
-#gem 'arel', '2.1.4'
 
 #server push
 #gem 'faye'
