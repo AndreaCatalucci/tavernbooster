@@ -1,4 +1,4 @@
 - content_for :sidebar do
-  = render 'shared/sidebar', :user_session => @user_session
+  = render 'shared/sidebar'
 
-= render 'form'
+= render 'form', :user_session => @user_session

@@ -21,10 +21,10 @@ class InvoiceProducer
   end
   
   def compile
-    @output_file_name = @file_name
-    @output_dir = "#{Rails.root}/public/invoices"
-    @aux_dir = "#{DATA_FOLDER}/auxfiles"
-    command = "pdflatex #{@input_file_name} -output-directory=#{@output_dir} -job-name=#{@output_file_name}
+    output_file_name = @file_name
+    output_dir = "#{Rails.root}/public/invoices"
+    aux_dir = "#{DATA_FOLDER}/auxfiles"
+    command = "pdflatex #{@input_file_name} -output-directory=#{output_dir} -job-name=#{output_file_name}
       -aux-directory=#{@aux_dir}"
     system(command)
   end
