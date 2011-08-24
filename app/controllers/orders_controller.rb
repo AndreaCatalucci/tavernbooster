@@ -106,7 +106,13 @@ class OrdersController < ApplicationController
   end
   
   def print
-    order = Order.find(params[:id])
-    TexWriter.new
+    @order = Order.find(params[:id])
+    i = InvoiceProducer.new
+    i.produce
+    i.compile
+    
+    respond_to do |format|
+      format.html { render action: "print" }
+    end
   end
 end

@@ -12,7 +12,7 @@ class InvoiceProducer
   
   def produce
     @invoice_data = {:id => 01}
-    @file_name = "invoice#{@invoice_data[:id]}"
+    @file_name = "invoice_#{@invoice_data[:id]}"
     @input_file_name = "#{DATA_FOLDER}/tex/#{@file_name}.tex"
     document = @invoice.result(binding)
     File.open(@input_file_name,'w') do |f|
