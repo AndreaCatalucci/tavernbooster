@@ -23,7 +23,6 @@ class InvoiceProducer
     @aux_dir = "auxfiles"
     command = "pdflatex #{@input_file_name} -output-directory=#{@output_dir} -job-name=#{@output_file_name}
       -aux-directory=#{@aux_dir}"
-    puts command
     system(command)
   end
 end
