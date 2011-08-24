@@ -36,6 +36,7 @@ class CoursesController < ApplicationController
   # GET /courses/new.json
   def new
     @course = Course.new
+    @course_types = CourseType.all.map {|c| [c.name.capitalize, c.id]}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -46,6 +47,7 @@ class CoursesController < ApplicationController
   # GET /courses/1/edit
   def edit
     @course = Course.find(params[:id])
+    @course_types = CourseType.all.map {|c| [c.name.capitalize, c.id]}
   end
 
   # POST /courses

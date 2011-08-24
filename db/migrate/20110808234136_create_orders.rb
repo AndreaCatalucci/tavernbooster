@@ -8,5 +8,8 @@ class CreateOrders < ActiveRecord::Migration
       t.references :user, :null => false
       t.timestamps
     end
+
+    add_index :orders, :table_id
+    add_index :orders, :user_id
   end
 end

@@ -11,5 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.references :role
       t.timestamps
     end
+
+    add_index :users, :role_id
   end
 end

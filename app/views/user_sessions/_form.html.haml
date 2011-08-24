@@ -2,15 +2,15 @@
   .modal-header
     %h3 Login
     %a.close{:href => '#', :onclick => 'history.back();'} x
-  = form_for(@user_session) do |f|
+  = form_for(user_session) do |f|
     .modal-body
-      - if @user_session.errors.any?
+      - if user_session.errors.any?
         .alert-message{:class => 'error'}
           %p
-            #{pluralize(@user_session.errors.count, "error")} prohibited this user_session from being saved:
+            #{pluralize(user_session.errors.count, "error")} prohibited this user_session from being saved:
 
           %ul
-            - @user_session.errors.full_messages.each do |msg|
+            - user_session.errors.full_messages.each do |msg|
               %li= msg
       .clearfix
         =f.label 'Username'

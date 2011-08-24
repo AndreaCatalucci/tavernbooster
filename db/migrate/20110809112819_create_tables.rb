@@ -5,5 +5,7 @@ class CreateTables < ActiveRecord::Migration
       t.integer :seats
       t.references :user
     end
+
+    add_index :tables, :user_id
   end
 end

@@ -20,6 +20,9 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
     t.integer "number_cooked",   :default => 0, :null => false
   end
 
+  add_index "course_orders", ["course_id"], :name => "index_course_orders_on_course_id"
+  add_index "course_orders", ["order_id"], :name => "index_course_orders_on_order_id"
+
   create_table "course_types", :force => true do |t|
     t.string "name"
   end
@@ -33,6 +36,8 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
     t.datetime "updated_at"
   end
 
+  add_index "courses", ["course_type_id"], :name => "index_courses_on_course_type_id"
+
   create_table "orders", :force => true do |t|
     t.string   "client_name"
     t.boolean  "paid",        :default => false, :null => false
@@ -43,6 +48,9 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["table_id"], :name => "index_orders_on_table_id"
+  add_index "orders", ["user_id"], :name => "index_orders_on_user_id"
+
   create_table "roles", :force => true do |t|
     t.string "name", :null => false
   end
@@ -52,6 +60,8 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
     t.integer "seats"
     t.integer "user_id"
   end
+
+  add_index "tables", ["user_id"], :name => "index_tables_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "username",          :null => false
@@ -65,5 +75,7 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["role_id"], :name => "index_users_on_role_id"
 
 end

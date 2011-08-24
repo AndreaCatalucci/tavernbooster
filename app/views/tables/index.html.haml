@@ -1,5 +1,5 @@
 - content_for :sidebar do
-  = render :partial => 'shared/sidebar'
+  = render 'shared/sidebar'
 
 #tables
   - @tables.each_slice(7) do |tables|

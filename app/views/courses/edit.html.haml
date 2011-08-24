@@ -1,6 +1,6 @@
 %h1 Editing course
 
-= render 'form'
+= render 'form', :course => @course, :course_types => @course_types
 
 = link_to 'Show', @course |
 = link_to 'Back', courses_path

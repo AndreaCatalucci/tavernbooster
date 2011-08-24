@@ -1,11 +1,11 @@
-= form_for(@user) do |f|
-  - if @user.errors.any?
+= form_for(user) do |f|
+  - if user.errors.any?
     #error_explanation
       %h2
-        #{pluralize(@user.errors.count, "error")} prohibited this user from being saved:
+        #{pluralize(user.errors.count, "error")} prohibited this user from being saved:
 
       %ul
-        - @user.errors.full_messages.each do |msg|
+        - user.errors.full_messages.each do |msg|
           %li= msg
 
   .clearfix
@@ -35,6 +35,6 @@
   .clearfix
     = f.label :role
     .input
-      = select("user", "role_id", Role.all.map {|r| [r.name.capitalize, r.id]}, {:include_blank => false})
+      = select("user", "role_id", roles, {:include_blank => false})
   .actions
     = f.submit "Create", :class => 'btn primary'

@@ -6,5 +6,8 @@ class CreateCourseOrders < ActiveRecord::Migration
       t.integer :number_required, :null => false
       t.integer :number_cooked, :null => false, :default => 0
     end
+
+    add_index :course_orders, :order_id
+    add_index :course_orders, :course_id
   end
 end

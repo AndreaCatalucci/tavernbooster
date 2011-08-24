@@ -8,5 +8,7 @@ class CreateCourses < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    add_index :courses, :course_type_id
   end
 end
