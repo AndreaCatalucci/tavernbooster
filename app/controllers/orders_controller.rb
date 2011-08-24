@@ -1,3 +1,5 @@
+require 'texwriter'
+
 class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
@@ -105,5 +107,6 @@ class OrdersController < ApplicationController
   
   def print
     order = Order.find(params[:id])
+    TexWriter.new
   end
 end
