@@ -102,19 +102,8 @@ class OrdersController < ApplicationController
       format.json { head :ok }
     end
   end
-
-  def cook
-    course_id = params[:course_id]
-    order_id = params[:order_id]
-    #CHECK THE PARAMS TO PREVENT INJECTION
-    course_order = CourseOrder.find_by_course_id_and_order_id(course_id,order_id)
-    course_order.increase_number_cooked_by(params[:number].to_i)
-    course_order2 = CourseOrder.find_by_course_id_and_order_id(course_id,order_id)
-    number_needed = course_order2.number_needed
-    number_cooked = course_order2.number_cooked
-
-    respond_to do |format|
-      format.json { render json: {number_cooked: number_cooked, number_needed: number_needed} }
-    end
+  
+  def print
+    order = Order.find(params[:id])
   end
 end

@@ -13,9 +13,8 @@ $ ->
     old_val = parseInt(cooked_area.html())
     $.ajax 
       type: 'PUT'
-      url: '/kitchen/orders/cook'
+      url: '/kitchen/courses/' + my_course_id + '/cook'
       data:
-        course_id : my_course_id 
         order_id : my_order_id
         number: number
       success: (arg) ->

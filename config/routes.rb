@@ -32,10 +32,11 @@ TavernBooster::Application.routes.draw do
 
   scope '/checkout' do
     resources :orders
+    get "orders/:id/print" => "orders#print"
   end
 
   scope '/kitchen' do
-    put "orders/cook" => 'orders#cook'
+    put "courses/:course_id/cook" => 'courses#cook'
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
