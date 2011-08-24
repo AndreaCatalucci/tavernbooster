@@ -11,29 +11,29 @@ TavernBooster::Application.routes.draw do
   get "admin/index"
 
   get "home/index"
-  
+
   put "tables/update"
 
   root :to => 'home#index'
-  
+
   #paths for user management
   get 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
   resources :user_sessions, :only => [:new, :create, :destroy]
-  
+
   scope '/admin' do
     resources :courses
-	  resources :users
+    resources :users
   end
-  
+
   scope '/waiter' do
     resources :orders
   end
-  
+
   scope '/checkout' do
     resources :orders
   end
-  
+
   scope '/kitchen' do
     put "orders/cook" => 'orders#cook'
   end

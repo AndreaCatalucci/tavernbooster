@@ -3,13 +3,13 @@ class Order < ActiveRecord::Base
   belongs_to :table
   has_many :course_orders
   has_many :courses, :through => :course_orders
-  
+
   def total_price
     course_orders.inject(0) do |acc, co|
       acc += Course.find(co.course_id).price * co.number_required
     end
   end
-  
+
   def formatted_courses
     result = {}
     found_courses = CourseOrder.includes(:course).find_all_by_order_id(id)
@@ -21,7 +21,7 @@ class Order < ActiveRecord::Base
         result[course_type.id][course.id] = {:name => course.name, :quantity => quantity}
       end
     end
-    
+
     logger.debug result.pretty_inspect
     result
   end

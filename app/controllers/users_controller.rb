@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   # GET /users.json
   def index
     @roles = Role.all
-	@roles -= Role.find_all_by_name('administrator')
+    @roles -= Role.find_all_by_name('administrator')
     @users_by_role = {}
-	@roles.each do |r|
-	   @users_by_role[r.id] = User.find_all_by_role_id(r.id)
-	end
+    @roles.each do |r|
+      @users_by_role[r.id] = User.find_all_by_role_id(r.id)
+    end
 
     respond_to do |format|
       format.html # index.html.erb
@@ -46,7 +46,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(params[:user])
-	
+
     respond_to do |format|
       if @user.save
         format.html { redirect_to @user, notice: 'User was successfully created.' }

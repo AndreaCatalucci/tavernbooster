@@ -19,15 +19,15 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @courses = @order.course_orders.inject([]) do |acc, co|
       course = Course.find(co.course_id)
-      acc << {name: course.name, number_required: co.number_required, 
+      acc << {name: course.name, number_required: co.number_required,
         number_cooked: co.number_cooked, price: course.price, subtotal: course.price * co.number_required}
     end
-    
+
     @total_price = @order.course_orders.inject(0) do |acc, co|
       course = Course.find(co.course_id)
       acc += course.price * co.number_required
     end
-    
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @order }
@@ -39,7 +39,7 @@ class OrdersController < ApplicationController
   def new
     @order = Order.new
     @course_types = CourseType.all
-	  @courses = @order.formatted_courses
+    @courses = @order.formatted_courses
     @allowed_tables = Table.find_all_by_user_id(current_user.id)
     respond_to do |format|
       format.html # new.html.erb
@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(params[:order])
     @order.user_id = current_user.id
-    ordered = params[:courses].select {|k,v| v != "0"}     
+    ordered = params[:courses].select {|k,v| v != "0"}
     respond_to do |format|
       if @order.save
         ordered.each do |course_id, number_required|
@@ -102,7 +102,7 @@ class OrdersController < ApplicationController
       format.json { head :ok }
     end
   end
-  
+
   def cook
     course_id = params[:course_id]
     order_id = params[:order_id]
@@ -111,7 +111,7 @@ class OrdersController < ApplicationController
     course_order2 = CourseOrder.find_by_course_id_and_order_id(course_id,order_id)
     number_needed = course_order2.number_needed
     number_cooked = course_order2.number_cooked
-    
+
     respond_to do |format|
       format.json { render json: {number_cooked: number_cooked, number_needed: number_needed} }
     end

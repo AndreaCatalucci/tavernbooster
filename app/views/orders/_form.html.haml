@@ -9,7 +9,7 @@
           %ul
             - @order.errors.full_messages.each do |msg|
               %li= msg
-      .clearfix	  
+      .clearfix
         =f.label 'Nome Cliente'
         .input
           =f.text_field :client_name
@@ -30,6 +30,6 @@
               %tr
                 %td=label_tag "courses[#{id}]", course[:name]
                 %td=number_field_tag "courses[#{id}]", course[:quantity]
-        
+
   .actions
     = f.submit

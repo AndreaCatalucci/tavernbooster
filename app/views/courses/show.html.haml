@@ -2,6 +2,6 @@
 %h2= @course.name
 = image_tag @course.image_url if @course.image?
 %h1= @course.price
-%p= @course.course_type.name.capitalize
+%p= @course.course_type_name.capitalize
 = link_to 'Edit', edit_course_path(@course) |
 = link_to 'Back', courses_path

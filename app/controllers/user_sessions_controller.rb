@@ -1,5 +1,5 @@
 class UserSessionsController < ApplicationController
-  
+
   # GET /user_sessions/new
   # GET /user_sessions/new.json
   def new
@@ -18,11 +18,11 @@ class UserSessionsController < ApplicationController
     logger.debug "CI SONO"
     respond_to do |format|
       if @user_session.save
-	    logger.debug "saved #{pp @user_session}"
+      logger.debug "saved #{pp @user_session}"
         format.html { redirect_to root_url, notice: 'Login eseguito correttamente' }
         format.json { render json: root_url, status: :created, location: @user_session }
       else
-	    logger.debug "not saved #{pp @user_session}"
+      logger.debug "not saved #{pp @user_session}"
         format.html { render action: "new" }
         format.json { render json: @user_session.errors, status: :unprocessable_entity }
       end

@@ -6,9 +6,9 @@
       %ul
         - @course.errors.full_messages.each do |msg|
           %li= msg
-  .clearfix	  
+  .clearfix
     =f.label 'Nome'
-    .input  
+    .input
       =f.text_field :name
   .clearfix
     =f.label 'Prezzo'

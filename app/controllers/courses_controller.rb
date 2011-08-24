@@ -1,19 +1,19 @@
 class CoursesController < ApplicationController
-  
+
   #load and authorize with cancan
   #load_and_authorize_resource
-  
+
   # GET /courses
   # GET /courses.json
   def index
     @courses_by_type = Hash.new
-	@sorted_types = CourseType.all
-	
+    @sorted_types = CourseType.all
+
     @sorted_types.each do |course_type|
-	  @courses_by_type[course_type] = Course.find_all_by_course_type_id(course_type.id)
-	end
-	logger.debug "ECCOLO"
-	logger.debug @courses_by_type
+    @courses_by_type[course_type] = Course.find_all_by_course_type_id(course_type.id)
+  end
+  logger.debug "ECCOLO"
+  logger.debug @courses_by_type
 
     respond_to do |format|
       format.html # index.html.erb
@@ -52,7 +52,7 @@ class CoursesController < ApplicationController
   # POST /courses.json
   def create
     @course = Course.new(params[:course])
-	
+
     respond_to do |format|
       if @course.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
