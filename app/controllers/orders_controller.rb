@@ -115,4 +115,18 @@ class OrdersController < ApplicationController
       format.html { render action: "print" }
     end
   end
+  
+  def pay
+    @order = Order.find(params[:id])
+    @order.paid = true
+    @order.save
+    redirect_to checkout_index_path
+  end
+  
+  def unpay
+    @order = Order.find(params[:id])
+    @order.paid = false
+    @order.save
+    redirect_to checkout_index_path
+  end
 end

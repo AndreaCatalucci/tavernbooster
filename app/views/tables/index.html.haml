@@ -6,7 +6,9 @@
     .row
       - tables.each do |table|
         = div_for(table, :class => "#{table.user ? 'occupied' : 'free'} span2 columns", :data => {:id => table.id, :waiter_id => table.user_id}) do
-          %h1= table.number
+          %h1= table.number           
+          -@pending_orders_by_table[table.number].try(:each) do |client_name|
+            %p= "in corso: #{client_name}"
           %p.waiter_username{:align => 'right'}= table.user_username if table.user
           %p.waiter_first_name{:align => 'right'}= table.user_first_name if table.user
           %p.waiter_last_name{:align => 'right'}= table.user_last_name if table.user

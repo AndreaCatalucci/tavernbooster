@@ -33,6 +33,8 @@ TavernBooster::Application.routes.draw do
   scope '/checkout' do
     resources :orders
     get "orders/:id/print" => "orders#print", :as => :order_print
+    put "orders/:id/pay" => "orders#pay", :as => :order_pay
+    put "orders/:id/unpay" => "orders#unpay", :as => :order_unpay
   end
 
   scope '/kitchen' do

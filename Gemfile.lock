@@ -139,6 +139,10 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2)
+    ransack (0.5.5)
+      actionpack (~> 3.0)
+      activerecord (~> 3.0)
+      activesupport (~> 3.0)
     rdoc (3.9.3)
     rspec (2.6.0)
       rspec-core (~> 2.6.0)
@@ -224,6 +228,7 @@ DEPENDENCIES
   pry
   pry-doc
   rails (= 3.1.0.rc6)
+  ransack
   rspec-rails
   ruby-debug19
   sass-rails (~> 3.1.0.rc)

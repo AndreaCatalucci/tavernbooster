@@ -21,6 +21,7 @@ gem 'twitter-bootstrap-rails', '0.0.3'
 #DSL for forms and show
 gem 'simple_form'
 gem 'show_for'
+gem 'ransack'
 
 #image uploads
 gem 'carrierwave'

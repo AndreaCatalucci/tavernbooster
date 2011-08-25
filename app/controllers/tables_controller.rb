@@ -2,6 +2,12 @@ class TablesController < ApplicationController
   def index
     @tables = Table.all
     @waiters = User.waiters
+    @pending_orders_by_table = {}
+    Order.unpaid.all.each_with_index do |order, index|
+      @pending_orders_by_table[order.table.number] = 
+        [*@pending_orders_by_table[order.table.number], order.client_name]
+    end
+    logger.debug @pending_orders_by_table.pretty_inspect
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @tables }
