@@ -1,0 +1,19 @@
+- content_for :sidebar do
+  = render :partial => 'shared/sidebar'
+
+%iframe{:id => 'invoice', :src=>"/invoices/invoice_#{@order.id}.pdf", :width => '100%', :style => "border: 0;" }
+
+:coffeescript
+  $ ->      
+    adjustInvoiceSize = ->
+      $('iframe#invoice').height(document.height)
+    
+    adjustInvoiceSize()
+        
+    printIframe = (id) ->
+      iframe = document.getElementById(id)
+      ifWin = iframe.contentWindow || iframe
+      ifWin.focus()
+      ifWin.print()
+      
+    printIframe('invoice')
