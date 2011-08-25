@@ -14,9 +14,9 @@ $ ->
         table_area.attr('data-waiter-id', null)
         table_area.addClass('free')
         table_area.removeClass('occupied')
-        table_area.children('.waiter_username').html('')
-        table_area.children('.waiter_first_name').html('')
-        table_area.children('.waiter_last_name').html('')
+        table_area.find('.waiter_username').html('')
+        table_area.find('.waiter_first_name').html('')
+        table_area.find('.waiter_last_name').html('')
         old_waiter_area = $('#user_' + old_waiter_id.toString())
         old_waiter_table_count = parseInt($(old_waiter_area).find('#table_count').html()) - 1
         $(old_waiter_area).find('#table_count').html(old_waiter_table_count)
