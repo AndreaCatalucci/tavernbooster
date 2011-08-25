@@ -2,5 +2,6 @@
   = render 'shared/sidebar'
 
 %h1 Ordini in attesa di pagamento
-
+= render 'orders_table', :orders => @unpaid_orders, :people_sum => @unpaid_people_sum, :price_sum => format_price(@unpaid_price_sum)
 %h1 Ordini saldati
+= render 'orders_table', :orders => @paid_orders, :people_sum => @paid_people_sum, :price_sum => format_price(@paid_price_sum)

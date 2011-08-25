@@ -3,7 +3,10 @@ class Order < ActiveRecord::Base
   belongs_to :table
   has_many :course_orders
   has_many :courses, :through => :course_orders
-
+  
+  scope :unpaid, where(:paid => false)
+  scope :paid, where(:paid => true)
+  
   def total_price
     course_orders.inject(0) do |acc, co|
       acc += Course.find(co.course_id).price * co.number_required

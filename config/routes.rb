@@ -32,7 +32,7 @@ TavernBooster::Application.routes.draw do
 
   scope '/checkout' do
     resources :orders
-    get "orders/:id/print" => "orders#print"
+    get "orders/:id/print" => "orders#print", :as => :order_print
   end
 
   scope '/kitchen' do
