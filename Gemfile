@@ -15,7 +15,8 @@ gem 'sqlite3'
 gem 'haml-rails'
 gem 'coffee-filter'
 
-gem 'twitter-bootstrap-rails'
+#version 0.0.4 seems bugged
+gem 'twitter-bootstrap-rails', '0.0.3'
 
 #DSL for forms and show
 gem 'simple_form'
@@ -25,7 +26,7 @@ gem 'show_for'
 gem 'carrierwave'
 #gem 'image_science'
 
-#user registration
+#user registration and role management
 gem 'authlogic'
 gem 'cancan'
 
