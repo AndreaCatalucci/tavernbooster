@@ -6,35 +6,56 @@
   float: left;
   
   .table {
+    position: relative;
     border-style: solid;
     overflow: hidden;
     margin-bottom: 20px;
     height: 130px;
     
-    h1 {
+    .clients {
+      font-family: 'Mako';
+      padding:0;
+      margin:0 0 0 3px;
+      ul {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+    
+    h1.number {
       margin: 0 0 0 5px;
+      display: block;
+      float: left;
     }
+    
     p {
-      margin: 0 5px 0 0;
-    }
-    .waiter_username {
-      font-size: 1.2em;
-      align: right;
+      margin: 0;
     }
     
-    .waiter_first_name {
+    .waiter {
       font-size: 0.9em;
-    }
-    
-    .waiter_last_name {
-      font-size: 0.9em;
+      float: right;
+      margin-top: 3px;
+      margin-right: 5px;
+      
+      .waiter_username {
+        font-size: 1.2em;
+      }
+      
+      .waiter_first_name {
+      }
+      
+      .waiter_last_name {
+      }
     }
     
     button {
-      float: none;
+      position: absolute;
+      left: 10%;
+      bottom: 2px;
       display: block;
       width: 80%;
-      margin: 10px auto;
+      margin: auto;
     }
   }
   
