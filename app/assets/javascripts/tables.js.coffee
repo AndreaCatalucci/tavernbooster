@@ -42,9 +42,9 @@ $ ->
               drop_area.attr('data-waiter-id', new_waiter_id)
               drop_area.removeClass('free')
               drop_area.addClass('occupied')
-              drop_area.children('.waiter_username').html(arg['waiter']['username'])
-              drop_area.children('.waiter_first_name').html(arg['waiter']['first_name'])
-              drop_area.children('.waiter_last_name').html(arg['waiter']['last_name'])
+              drop_area.find('.waiter_username').html(arg['waiter']['username'])
+              drop_area.find('.waiter_first_name').html(arg['waiter']['first_name'])
+              drop_area.find('.waiter_last_name').html(arg['waiter']['last_name'])
               new_waiter_table_count = parseInt($(drag_area).find('#table_count').html()) + 1
               $(drag_area).find('#table_count').html(new_waiter_table_count)
               old_waiter_area = $('#user_' + old_waiter_id.toString())
