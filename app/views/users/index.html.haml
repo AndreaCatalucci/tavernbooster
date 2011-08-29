@@ -16,8 +16,8 @@
       -@users_by_role[role.id].each do |user|
         %tr
           %td= user.username
-          %td= link_to 'Show', user
-          %td= link_to 'Edit', edit_user_path(user)
-          %td= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete
+          %td= link_to 'Mostra', user
+          %td= link_to 'Modifica', edit_user_path(user)
+          %td= link_to 'Elimina', user, confirm: 'Are you sure?', method: :delete
 
-= link_to 'New User', new_user_path, :class => 'btn'
+= link_to 'Nuovo Utente', new_user_path, :class => 'btn'

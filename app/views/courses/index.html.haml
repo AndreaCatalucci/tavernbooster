@@ -1,7 +1,7 @@
 - content_for :sidebar do
   = render :partial => 'shared/sidebar'
 
-%h1 Listing courses
+%h1 Elenco dei piatti
 
 %table
   %thead
@@ -25,9 +25,9 @@
           = image_tag course.image_url if course.image?
         %td
           %h1= format_price(course.price)
-        %td= link_to 'Show', course
-        %td= link_to 'Edit', edit_course_path(course)
-        %td= link_to 'Destroy', course, confirm: 'Are you sure?', method: :delete
+        %td= link_to 'Mostra', course
+        %td= link_to 'Modifica', edit_course_path(course)
+        %td= link_to 'Elimina', course, confirm: 'Are you sure?', method: :delete
 %br
 
-  = link_to 'New Course', new_course_path, :class => 'btn'
+  = link_to 'Nuovo Piatto', new_course_path, :class => 'btn'
