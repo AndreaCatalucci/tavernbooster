@@ -1,0 +1,13 @@
+.notice
+  = notice
+
+%p
+  %b Nome Utente:
+  = @user.username
+
+%p
+  %b Password:
+  = @user.password
+
+= link_to 'Modifica', edit_user_path(@user)
+= link_to 'Indietro', users_path

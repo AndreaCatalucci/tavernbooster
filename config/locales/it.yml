@@ -1,0 +1,12 @@
+it:
+  activerecord:
+  template:
+    header:
+      one:   "1 errore ha impedito il salvataggio di %{model}"
+      other: "%{count} errori hanno impedito il salvataggio di %{model}"
+      body:    "Ci sono problemi nei seguenti campi:"
+  models: 
+    user: "Utente"
+  attributes:
+    user:
+      username: "Nome Utente"
