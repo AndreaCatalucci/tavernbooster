@@ -6,7 +6,7 @@ gem 'rails', '3.1.0.rc8'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 #database
-gem 'sqlite3'
+#gem 'sqlite3'
 
 #server push
 #gem 'faye'
