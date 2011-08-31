@@ -1,11 +1,57 @@
-\documentclass[12pt]{article}
+<%# This template expects an @invoice_data hash with the following keys: %>
+<%#   :id => invoice ID %>
+<%#   :table_number => table number %>
+<%#   :clients_number => number of clients %>
+<%#   :courses => list of courses, where each course is an hash {:name, :unit_price, :quantity, :total_price} %>
+<%#   :discount => can be nil if not present or a negative number otherwise %>
+<%#   :total_price => the invoice's total price %>
+
+\documentclass[10pt,oneside]{article}
+\usepackage[a5paper,margin=5mm]{geometry}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[italian]{babel}
-\usepackage{invoice}
+\usepackage{graphicx}
+\pagestyle{empty}
+\setlength{\parindent}{0mm}
+\frenchspacing
+\linespread{1.2}
 \begin{document}
-  Sagra de sti cazzi
-  \begin{tabular}{ l | c | r | }
-    1 & 2 & 3 \\
-    4 & 5 & 6 \\
-    7 & 8 & 9 \\
-  \end{tabular}
+\fontfamily{pag}\selectfont
+
+\begin{center}
+\includegraphics[width=2cm]{chef.jpg} \\
+{\Large\bfseries Sagra de 'sti cazzi} \\[10mm]
+\end{center}
+
+\begin{center}
+% \hspace{0.04\textwidth}
+\begin{tabular}{ l r }
+\textbf{Ricevuta n.} & \textbf{<%=@invoice_data[:id]%>} \\
+\textbf{Tavolo} & \textbf{<%=@invoice_data[:table_number]%>} \\
+\textbf{Clienti} & \textbf{<%=@invoice_data[:clients]%>} \\
+\end{tabular}
+\\[10mm]
+\end{center}
+
+\begin{center}
+\begin{tabular*}{0.9\textwidth}{ @{\extracolsep{\fill}} l r r r }
+\textbf{Piatto} & \textbf{Prezzo unitario} & \textbf{Quantità} & \textbf{Totale (euro)} \\
+\hline
+
+<% @invoice_data[:courses].each do |course| %>
+<%= "#{course[:name]} & #{course[:unit_price]} & #{course[:quantity]} & #{course[:total_price]} \\\\" %>
+<% end %>
+
+<% if @invoice_data[:discount] %>
+\hline
+Sconto & & & <%=@invoice_data[:discount]%> \\
+<% end %>
+
+\hline\hline
+\textbf{Totale} & & & \textbf{<%=@invoice_data[:total_price]%>} \\
+\end{tabular*}
+\end{center}
+
 \end{document}
