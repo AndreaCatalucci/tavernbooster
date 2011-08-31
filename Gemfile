@@ -1,12 +1,14 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.0.rc8'
+gem 'rails', '~>3.1.0'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-#database
-#gem 'sqlite3'
+group :development do
+  #database
+  gem 'sqlite3'
+end
 
 #server push
 #gem 'faye'
