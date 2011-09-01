@@ -107,14 +107,14 @@ class OrdersController < ApplicationController
   
   def print
     @order = Order.find(params[:id])
-    invoice_data = {}
-    invoice_data[:id] = @order.id
-    invoice_data[:people] = @order.people
-    invoice_data[:table_number] = @order.table.number
-    invoice_data[:courses] = @order.course_list
-    invoice_data[:discount] = @order.discount
-    invoice_data[:total_price] = @order.total_price
-    logger.debug invoice_data.pretty_inspect
+    invoice_data = {
+        id: @order.id,
+        people: @order.people,
+        table_number: @order.table.number,
+        courses: @order.course_list,
+        discount: @order.discount,
+        total_price: @order.total_price
+      }
     i = InvoiceProducer.new invoice_data
     i.produce
     

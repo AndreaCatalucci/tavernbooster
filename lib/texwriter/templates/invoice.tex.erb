@@ -41,16 +41,16 @@
 \hline
 
 <% @invoice_data[:courses].each do |course| %>
-<%= "#{course[:name]} & #{course[:unit_price]} & #{course[:quantity]} & #{course[:total_price]} \\\\" %>
+<%= "#{course[:name]} & #{format_price course[:unit_price]} & #{course[:quantity]} & #{format_price course[:total_price]} \\\\" %>
 <% end %>
 
 <% if @invoice_data[:discount] %>
 \hline
-Sconto & & & <%=@invoice_data[:discount]%> \\
+Sconto & & & <%=format_price @invoice_data[:discount]%> \\
 <% end %>
 
 \hline\hline
-\textbf{Totale} & & & \textbf{<%=@invoice_data[:total_price]%>} \\
+\textbf{Totale} & & & \textbf{<%=format_price @invoice_data[:total_price]%>} \\
 \end{tabular*}
 \end{center}
 

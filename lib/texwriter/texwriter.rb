@@ -1,6 +1,8 @@
 require 'erb'
+require 'application_helper'
 
 class InvoiceProducer
+  include ApplicationHelper
   attr_accessor :invoice_data
   
   DATA_FOLDER = "#{Rails.root}/lib/texwriter"
