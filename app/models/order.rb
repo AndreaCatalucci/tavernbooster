@@ -35,7 +35,6 @@ class Order < ActiveRecord::Base
       end
     end
 
-    logger.debug result.pretty_inspect
     result
   end
 end
