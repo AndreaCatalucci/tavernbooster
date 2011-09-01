@@ -1,6 +1,6 @@
 class TablesController < ApplicationController
   def index
-    @tables = Table.all
+    @tables = Table.order('number').all
     @waiters = User.waiters
     @pending_orders_by_table = {}
     Order.unpaid.all.each_with_index do |order, index|
