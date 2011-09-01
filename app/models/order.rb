@@ -8,8 +8,8 @@ class Order < ActiveRecord::Base
   scope :paid, where(:paid => true)
   
   def course_list
-    course_orders.all.inject([])each do |arr, course_order|
-      couse = course_order.course
+    course_orders.all.inject([]) do |arr, course_order|
+      course = course_order.course
       number_cooked = course_order.number_cooked
       unit_price = course.price
       total_price = unit_price * number_cooked

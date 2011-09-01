@@ -21,7 +21,7 @@
 \fontfamily{pag}\selectfont
 
 \begin{center}
-\includegraphics[width=2cm]{chef.jpg} \\
+\includegraphics[width=2cm]{<%= "#{Rails.root}/lib/texwriter/templates/chef.jpg" %>} \\
 {\Large\bfseries Sagra de 'sti cazzi} \\[10mm]
 \end{center}
 
@@ -30,7 +30,7 @@
 \begin{tabular}{ l r }
 \textbf{Ricevuta n.} & \textbf{<%=@invoice_data[:id]%>} \\
 \textbf{Tavolo} & \textbf{<%=@invoice_data[:table_number]%>} \\
-\textbf{Clienti} & \textbf{<%=@invoice_data[:clients]%>} \\
+\textbf{Clienti} & \textbf{<%=@invoice_data[:people]%>} \\
 \end{tabular}
 \\[10mm]
 \end{center}
