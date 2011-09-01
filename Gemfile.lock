@@ -76,7 +76,7 @@ GEM
     erubis (2.7.0)
     execjs (1.2.4)
       multi_json (~> 1.0)
-    ffaker (1.8.0)
+    ffaker (1.8.1)
     ffi (1.0.9-x86-mingw32)
     gherkin (2.4.16-x86-mingw32)
       json (>= 1.4.6)
@@ -105,6 +105,7 @@ GEM
     mime-types (1.16)
     multi_json (1.0.3)
     nokogiri (1.5.0-x86-mingw32)
+    pg (0.11.0-x86-mingw32)
     polyglot (0.3.2)
     pry (0.9.3-x86-mingw32)
       coderay (>= 0.9.8)
@@ -227,6 +228,7 @@ DEPENDENCIES
   ffaker
   haml-rails
   jquery-rails
+  pg
   pry
   pry-doc
   rails (~> 3.1.0)
