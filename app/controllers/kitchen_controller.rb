@@ -1,5 +1,5 @@
 class KitchenController < ApplicationController
   def index
-    @courses = Course.needed.group(:id, :name).order('created_at')
+    @courses = Course.needed.order('id, created_at')
   end
 end
