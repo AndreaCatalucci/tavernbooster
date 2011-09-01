@@ -48,12 +48,14 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
+#for now it's general use due to heroku, but it should be in test-dev
+gem 'ffaker'
+
 group :development do
   gem 'pry'
   gem 'pry-doc'
   # To use debugger
   gem 'ruby-debug19', :require => 'ruby-debug'
-  gem 'ffaker'
 end
 
 group :test do
