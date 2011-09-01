@@ -6,3 +6,4 @@ tmp/
 lib/texwriter/tex/
 lib/texwriter/output/
 lib/texwriter/auxfiles/
+public/invoices/
