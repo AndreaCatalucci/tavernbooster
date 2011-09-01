@@ -7,9 +7,19 @@ class Order < ActiveRecord::Base
   scope :unpaid, where(:paid => false)
   scope :paid, where(:paid => true)
   
+  def course_list
+    course_orders.all.inject([])each do |arr, course_order|
+      couse = course_order.course
+      number_cooked = course_order.number_cooked
+      unit_price = course.price
+      total_price = unit_price * number_cooked
+      arr << {name: course.name, unit_price: unit_price, quantity: number_cooked, total_price: total_price}
+    end
+  end
+  
   def total_price
     course_orders.inject(0) do |acc, co|
-      acc += Course.find(co.course_id).price * co.number_required
+      acc += co.course.price * co.number_required
     end
   end
 

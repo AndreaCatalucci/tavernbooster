@@ -4,6 +4,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string :client_name
       t.boolean :paid, :default => false, :null => false
       t.integer :people
+      t.decimal :discount, :precision => 6, :scale => 2
       t.references :table, :null => false
       t.references :user, :null => false
       t.timestamps

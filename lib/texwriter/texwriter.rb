@@ -5,13 +5,19 @@ class InvoiceProducer
   
   DATA_FOLDER = "#{Rails.root}/lib/texwriter"
    
-  def initialize
+  def initialize(invoice_data)
     template = File.read("#{DATA_FOLDER}/templates/invoice.tex.erb")
-    @invoice = ERB.new template
+    @invoice_data = invoice_data
   end
   
   def produce
-    @invoice_data = {:id => 01}
+    produce_tex
+    compile_tex
+  end
+
+  private
+
+  def produce_tex
     @file_name = "invoice_#{@invoice_data[:id]}"
     @input_file_name = "#{DATA_FOLDER}/tex/#{@file_name}.tex"
     document = @invoice.result(binding)
@@ -20,7 +26,7 @@ class InvoiceProducer
     end
   end
   
-  def compile
+  def compile_tex
     output_file_name = @file_name
     output_dir = "#{Rails.root}/public/invoices"
     aux_dir = "#{DATA_FOLDER}/auxfiles"
