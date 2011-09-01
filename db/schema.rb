@@ -40,10 +40,11 @@ ActiveRecord::Schema.define(:version => 20110811152142) do
 
   create_table "orders", :force => true do |t|
     t.string   "client_name"
-    t.boolean  "paid",        :default => false, :null => false
+    t.boolean  "paid",                                      :default => false, :null => false
     t.integer  "people"
-    t.integer  "table_id",                       :null => false
-    t.integer  "user_id",                        :null => false
+    t.decimal  "discount",    :precision => 6, :scale => 2
+    t.integer  "table_id",                                                     :null => false
+    t.integer  "user_id",                                                      :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
