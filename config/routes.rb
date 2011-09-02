@@ -19,7 +19,7 @@ TavernBooster::Application.routes.draw do
   #paths for user management
   get 'login' => 'user_sessions#new'
   match 'logout' => 'user_sessions#destroy'
-  resources :user_sessions, :only => [:new, :create, :destroy]
+  resources :user_sessions, :only => [:create]
 
   scope '/admin' do
     resources :courses
