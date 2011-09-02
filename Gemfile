@@ -16,8 +16,7 @@ gem 'pg', :group => :produciton
 gem 'haml-rails'
 gem 'coffee-filter'
 
-#version 0.0.4 seems bugged
-gem 'twitter-bootstrap-rails', '0.0.3'
+gem 'twitter-bootstrap-rails'
 
 #DSL for forms and show
 gem 'simple_form'
