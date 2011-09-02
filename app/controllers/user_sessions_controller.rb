@@ -22,7 +22,6 @@ class UserSessionsController < ApplicationController
         format.html { redirect_to root_url, notice: 'Login eseguito correttamente' }
         format.json { render json: root_url, status: :created, location: @user_session }
       else
-      logger.debug "not saved #{pp @user_session}"
         format.html { render action: "new" }
         format.json { render json: @user_session.errors, status: :unprocessable_entity }
       end
