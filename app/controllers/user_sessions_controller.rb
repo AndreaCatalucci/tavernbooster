@@ -18,7 +18,6 @@ class UserSessionsController < ApplicationController
     logger.debug "CI SONO"
     respond_to do |format|
       if @user_session.save
-      logger.debug "saved #{pp @user_session}"
         format.html { redirect_to root_url, notice: 'Login eseguito correttamente' }
         format.json { render json: root_url, status: :created, location: @user_session }
       else
